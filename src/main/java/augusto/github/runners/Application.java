@@ -2,7 +2,6 @@ package augusto.github.runners;
 
 import augusto.github.runners.run.Location;
 import augusto.github.runners.run.Run;
-import foo.bar.WelcomeMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;

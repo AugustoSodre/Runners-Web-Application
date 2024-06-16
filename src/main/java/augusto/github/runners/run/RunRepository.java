@@ -23,6 +23,24 @@ public class RunRepository {
                 .findFirst();
     }
 
+    void create(Run run){
+        runs.add(run);
+    }
+
+    void update(Run run, Integer id){
+        Optional<Run> runOptional = findById(id);
+        if (runOptional.isPresent()){
+            runs.set(runs.indexOf(runOptional.get()), run);
+        }
+    }
+
+    void delete(Integer id){
+        Optional<Run> runOptional = findById(id);
+        if (runOptional.isPresent()){
+            runs.remove(runOptional.get());
+        }
+    }
+
     @PostConstruct
     private void init(){
         //Starts the class with a few runs already

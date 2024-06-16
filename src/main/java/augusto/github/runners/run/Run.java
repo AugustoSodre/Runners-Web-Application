@@ -9,4 +9,12 @@ public record Run(
         LocalDateTime completedOn,
         Integer miles,
         Location location
-        ){}
+        ){
+
+        public Run {
+                if (completedOn.isBefore(startedOn)) {
+                        throw new IllegalArgumentException("Completed on must be before startedOn");
+                }
+        }
+}
+
